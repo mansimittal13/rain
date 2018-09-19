@@ -1,0 +1,234 @@
+<div class="ThemewidgetContent" dojoAttachPoint="containerNode">
+	<div class="ThemewidgetPanel">
+
+		<div data-dojo-type="dijit/TitlePane" open="false"  align="left" data-dojo-props="title: 'Dry Days'">
+
+							<table style="padding-left:10%;" cellspacing="10">
+					<tr>
+						<td style="width: 100%;position: relative;left: -42px;">Select Date</td>
+						<td style="width: 100%;position: relative;left: -38px;">
+						<input type="text" name="drydaydate1" id="drydaydate1" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'MM-dd-yyyy', strict:true}" required="true" />
+						</td>
+					</tr>
+					<tr>
+						<td style="position: relative;right: 15%;">Input URL</td>
+						<td style="position: relative;right: 14%;">
+						<input data-dojo-type="dijit/form/TextBox" id="drydaydate2" name="drydaydate1" style="position: relative;left: 1.5%;"/>
+						</td>
+					</tr>
+					<tr>
+						<td id="tdb1" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets1" style="position: relative;left: 47px;">Dry Days</td>
+						<td><div class="themeinfoButton wbInfo" dojoAttachEvent="onclick:drydayinfo" style="position: relative;right: -47%;"></div></td>
+					</tr>
+				</table>
+			</div>
+			<br>	
+	
+		<div data-dojo-type="dijit/TitlePane" open="false" align="left" data-dojo-props="title: 'Rainfall Deviation'">
+
+			<table style="padding-top:10px;" cellspacing="10">
+				<tr>
+					<td>Input Month and Year Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="rd_dev1" name="rd_dev1"  style="position: relative;left: 1.5%;"/>
+					</td>
+					<!--<td><button id="info-image"><img src="/rainfall/img/j.png"></button></td>-->
+
+				</tr>
+
+				<tr>
+					<td>Input URL</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="rd_dev2" name="rd_dev2" style="position: relative;left: 1.5%;"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td id="tdb2" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets2" style="position: relative;left: 26%;">Rainfall Deviation</td>
+					<td><div class="themeinfoButton wbInfo" dojoAttachEvent="onclick:rdinfo" style="position: relative;right: -60%;"></div></td>
+				</tr>
+
+			</table>
+
+		</div>
+
+		<br/>
+		<div data-dojo-type="dijit/TitlePane" open="false" align="left" data-dojo-props="title: 'Percent Normal'">
+
+			<table style="padding-top:10px;" cellspacing="3">
+				<tr>
+					<td>Input Year Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="nr_percent1" name="nr_percent" value="testing testing"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="position: relative;right: 2%;">Input Month Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="nr_percent2" name="nr_percent" value="testing testing" style="position: relative;left: 0.5%;"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="position: relative;right: 8%;">Input URL</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="nr_percent3" name="nr_percent" value="testing testing"style="position: relative;left: 1.5%;"/>
+					</td>
+				</tr>
+				<tr>
+					<td id="tdb3" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets3" style="position: relative;left: 81px;">Percent Normal</td>
+					<td><div class="themeinfoButton wbInfo" dojoAttachEvent="onclick:percentnrinfo" style="position: relative;right: -66%;"></div></td>
+				</tr>
+			</table>
+
+			<!--
+			<table style="padding-top:10px;" cellspacing="10">
+
+			<tr>
+			<td id="tdb8" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets8"
+			style="position: relative;left: 40px;">NDVI Deviation</td>
+			</tr>
+			<tr>
+			<td id="tdb9" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets9"
+			style="position: relative;left: 40px;">NDWI VCI</td>
+			</tr>
+			<tr>
+			<td id="tdb10" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets10"
+			style="position: relative;left: 40px;">NDWI Deviation</td>
+			</tr>
+			<tr>
+			<td id="tdb11" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets11"
+			style="position: relative;left: 40px;">PASM</td>
+			</tr>
+			<tr>
+			<td id="tdb12" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets12"
+			style="position: relative;left: 40px;">CAS</td>
+			</tr>
+			</table>-->
+
+		</div>
+		<br/>
+		<div data-dojo-type="dijit/TitlePane" open="false" align="left" data-dojo-props="title: 'Total Rainfall'">
+
+			<table style="padding-top:10px;" cellspacing="3">
+				<tr>
+					<td>Input Month Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="tt_rainfal1" name="nr_percent" value="testing testing"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="position: relative;left: -2%;">Input Year Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="tt_rainfal2" name="nr_percent" value="testing testing" style="position: relative;left: 1.5%;"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="position: relative;left: -8%;">Input URL</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="tt_rainfal3" name="nr_percent" value="testing testing"style="position: relative;left: 1.5%;"/>
+					</td>
+				</tr>
+				<tr>
+					<td id="tdb4" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets4"
+					style="position: relative;left: 81px;">Total Rainfall</td>
+					<td><div class="themeinfoButton wbInfo" dojoAttachEvent="onclick:totalraininfo" style="position: relative;right: -66%;"></div></td>
+				</tr>
+			</table>
+		</div>
+		<br/>
+		<div data-dojo-type="dijit/TitlePane" open="false" align="left" data-dojo-props="title: 'Trigger1'">
+
+			<table style="padding-top:10px;" cellspacing="3">
+				<tr>
+					<td>Input Month Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="trigger1" name="nr_percent" value="testing testing"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Input Year Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="trigger2" name="nr_percent" value="testing testing" style="position: relative;left: 1.5%;"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Input URL</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="trigger3" name="nr_percent" value="testing testing"style="position: relative;left: 1.5%;"/>
+					</td>
+				</tr>
+				<tr>
+					<td id="tdb5" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets5"
+					style="position: relative;left: 40px;">Trigger 1</td>
+				</tr>
+			</table>
+
+		</div>
+		<br/>
+		<div data-dojo-type="dijit/TitlePane" open="false" align="left" data-dojo-props="title: 'Severity'">
+
+			<table style="padding-top:10px;" cellspacing="3">
+				<tr>
+					<td>Input Month Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="Severity1" name="nr_percent" value="testing testing"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Input Year Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="Severity2" name="nr_percent" value="testing testing" style="position: relative;left: 1.5%;"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Input URL</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="Severity3" name="nr_percent" value="testing testing"style="position: relative;left: 1.5%;"/>
+					</td>
+				</tr>
+				<tr>
+					<td id="tdb6" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets6"
+					style="position: relative;left: 40px;">Drought Severity</td>
+				</tr>
+			</table>
+		</div>
+		<br/>
+		<div data-dojo-type="dijit/TitlePane" open="false" align="left" data-dojo-props="title: 'NDVI VCI'">
+
+			<table style="padding-top:10px;" cellspacing="3">
+				<tr>
+					<td>Input Month Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="ndvivci1" name="nr_percent" value="testing testing"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Input Year Value</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="ndvivci2" name="nr_percent" value="testing testing" style="position: relative;left: 1.5%;"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Input URL</td>
+					<td>
+					<input data-dojo-type="dijit/form/TextBox" id="ndvivci3" name="nr_percent" value="testing testing"style="position: relative;left: 1.5%;"/>
+					</td>
+				</tr>
+				<tr>
+					<td id="tdb7" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets7"
+					style="position: relative;left: 40px;">NDVI VCI</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

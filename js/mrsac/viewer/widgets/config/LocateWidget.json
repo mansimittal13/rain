@@ -1,0 +1,24 @@
+/*
+//Richa//
+*/
+{
+	locate: {
+		locator: "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
+		constrainedFields: [
+			"State"
+		],
+		constraintValues: {
+			"State": ["AK","AL","AR","AZ","CA","CO","CT","DE","DC","FL",
+					 "GA","HI","IA","ID","IL","IN","KS","KY","LA","MA",
+					 "MD","ME","MI","MN","MS","MO","MT","NC","ND","NE",
+					 "NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI",
+					 "SC","SD","TN","TX","UT","VA","WA","WI","WV","WY"]
+		},
+		minGeocodeScore: 50,
+		geometry: "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
+		projections: [
+			{name: "", wkid: -1},
+			{name: "UTM Zone 10N", wkid: 26910}
+		]
+	}
+}

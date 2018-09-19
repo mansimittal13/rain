@@ -1,0 +1,149 @@
+<div class="controllerContainer">
+	<div class="widgetBoxT controllerBox" dojoAttachPoint="controllerBoxNode">
+
+		<div class="controllerIcon"><img class="controllerIconimg">
+		</div>
+		<div class="controllerTitleBox">
+			<div class="controllerTitle">
+				&nbsp;
+			</div>
+			<table style="font-size:10px;width:250%;">
+				<tr>
+					<td class="controllerSubtitle">&nbsp;</td><td class="controllerStatus" align="right">&nbsp;</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<div class="controllerIconR"><img class="controllerIconRimg"/>
+		</div>
+		<div class="controllerIconL"><img class="controllerIconLimg"/>
+		</div>
+	</div>
+
+	<div class="panel" style="display:none"dojoAttachEvent="onmouseover:onMouseoverPanel,onmouseout:outMouseoverPanel">
+
+		<div class="controls">
+			<div class="buttons">
+				<button id="btnStreets" class="btn btn-primary btn-wide">
+					Streets
+				</button>
+				<button id="btnSatellite" class="btn btn-primary btn-wide">
+					Satellite
+				</button>
+				<button id="btnHybrid" class="btn btn-primary btn-wide">
+					Hybrid
+				</button>
+				<button id="btnTopo" class="btn btn-primary btn-wide">
+					Topo
+				</button>
+				<button id="btnGray" class="btn btn-primary btn-wide">
+					Gray
+				</button>
+				<button id="btnNatGeo" class="btn btn-primary btn-wide">
+					National Geographic
+				</button>
+				<button id="btnNone" class="btn btn-primary btn-wide">
+					No Basemap
+				</button>
+				<button id="btnNonemrsac" class="btn btn-primary btn-wide">
+					MRSAC Basemap
+				</button>
+
+			</div>
+		</div>
+	</div>
+	<div id="tocDiv" class="panelToc" dojoAttachEvent="onmouseover:onMouseoverTOC,onmouseout:outMouseoverTOC" style="display:none" >
+
+	</div>
+	<div id="tocDiv1" class="panelToc1" dojoAttachEvent="onmouseover:onMouseoverTOC1,onmouseout:outMouseoverTOC1" style="display:none" >
+
+	</div>
+	<div id="appMenu" class="appMenuClass" dojoAttachEvent="onmouseover:onMouseoverapp,onmouseout:outMouseoverapp" style="display:none" >
+		<div class="controls">
+			<div class="buttons">
+			<!--	<button class="btn btn-primary btn-wide" dojoAttachEvent="onClick:openRoute">
+					<table>
+						<tr>
+							<td><img src="js/mrsac/viewer/assets/images/icons/RouteA.png" name="routeimg" style="height: 20px;width:20px"/></td>
+							<td style="font-size: 12px;">Routing</td>
+						</tr>
+					</table>
+				</button> -->
+
+				 <button class="btn btn-primary btn-wide" dojoAttachEvent="onClick:openRainfall">
+					<table>
+						<tr>
+							<td><img src="js/mrsac/viewer/assets/images/icons/RouteA.png" name="routeimg" style="height: 20px;width:20px"/></td>
+							<td style="font-size: 12px;">Rainfall</td>
+						</tr>
+					</table>
+				</button>
+				<button class="btn btn-primary btn-wide" dojoAttachEvent="onClick:openDrought">
+					<table>
+						<tr>
+							<td><img src="js/mrsac/viewer/assets/images/icons/RouteA.png" name="routeimg" style="height: 20px;width:20px"/></td>
+							<td style="font-size: 12px;">Drought</td>
+						</tr>
+					</table>
+				</button>  
+			</div>
+		</div>
+	</div>
+	<div dojoAttachPoint="legendContainer" class="legendContainer" style="display: none;">
+
+	</div>
+	<div class="controllerMenuBoxOuter" id="controllerMenuBoxOuter">
+        <div class="subcontrollermenus" id="subcontrollermenus">
+
+			<table cellspacing="4" cellpadding="4px">
+				<tr>
+
+					<td>
+					<div id="basemapControlDiv"  class="btn btn-primary btn-wide-75 btn-max-width"dojoAttachEvent="onmouseover:onActionBasemap,onmouseout:outActionBasemap" >
+						<img src="img/layer1.png" style="width:32px;height:32px;top: -2px;position: absolute;padding: 0px;left: -8px;"/>
+						<div style="top: 3px;left: 35px;position: absolute;">
+							Basemaps
+						</div>
+					</div></td>
+
+					<td>
+					<div id="basemapControlDiv_T" class="btn btn-primary btn-wide-75 btn-max-width"dojoAttachEvent="onmouseover:onActionLayer,onmouseout:outActionLayer">
+						<img src="img/basemap1.png" style="width:32px;height:32px;top: -2px;position: absolute;padding: 0px;left: -8px;"/>
+						<div style="top: 3px;left: 35px;position: absolute;">
+							Base Layer
+						</div>
+					</div></td>
+					<td>
+					<div id="projectDiv" class="btn btn-primary btn-wide-75 btn-max-width"dojoAttachEvent="onmouseover:onActionProjectlayer,onmouseout:outActionProjectlayer">
+						<img src="img/Layers.png"  style="width:40px;height:40px;top: -10px;position: absolute;padding: 0px;left: -15px;"/>
+
+						<div style="top: 3px;left: 35px;position: absolute;">
+							Departmental Layer
+						</div>
+					</div></td>
+					<td>
+                                            <div id="aa"class="btn btn-primary btn-wide-75 btn-max-width aa"style="position:absolute;top:2px;left:530px;width:140px;padding:2px;height:22px;"dojoAttachEvent="onmouseover:onIconHover,onmouseout:outIconHover">
+						<img src="img/globered.png"  style="width:32px;height:32px;top: -2px;position: absolute;padding: 0px;left: -8px;"/>
+
+						<div style="top: 3px;left: 35px;position: absolute;">
+							Portal Application
+						</div>
+					</div></td>
+				</tr>
+			</table>
+		</div>
+		<div class="controllerMenuBox" id="controllerMenuBox"dojoAttachPoint="containerNode" >
+
+
+		</div>
+		<div id="search">
+
+		</div>
+            <div id="res_menu_box" style="display:none;position:relative;cursor:pointer"dojoAttachEvent="onClick:responsiveMenu">
+			<img src="img/menu.png" style="width:40px;height:30px;margin-right:1%;">
+		</div>
+
+	</div>
+
+</div>

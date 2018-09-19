@@ -1,0 +1,10 @@
+<configuration>
+	<about>
+		<title>MRSAC JavaScript Viewer</title>
+		<subtitle>Developed by the MRSAC  Viewer Developers Team</subtitle>
+		<version>Version 3.0</version>
+		<description>MRSAC would like to invite all the javascript developers to contribute their widgets to this viewer .</description>
+		<copyright>Copyright 2014 MRSAC. All rights reserved</copyright>
+		<logo>assets/images/icons/mrsac.png</logo>
+	</about>
+</configuration>

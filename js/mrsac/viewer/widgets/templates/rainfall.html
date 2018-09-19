@@ -1,0 +1,82 @@
+<div class="ThemewidgetContent" dojoAttachPoint="containerNode">
+	<div class="ThemewidgetPanel">
+
+		<div data-dojo-type="dijit/TitlePane" open="true" align="left" data-dojo-props="title: 'Rainfall'">
+			<div class="divAddressResultContainer">
+
+			</div>
+			<div>
+
+				<table style="padding-left:10%;" cellspacing="10">
+					<tr>
+						<td style="width: 100%;position: relative;left: 10px;">Date(MM-DD-YYYY)</td>
+
+					</tr>
+					<tr>
+						<td style="width: 100%;position: relative;left: 30px;">
+						<input type="text" name="date1live" id="date1live" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'MM-dd-yyyy', strict:true}" required="true" />
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+<br>
+			<div>
+
+				<table style="padding-top:10px;" cellspacing="10">
+					<tr>
+						<td id="tdb1" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets1" style="position: relative;left: 40px;display:none;">Download CSV</td>
+					</tr>
+					<tr>
+						<td id="tdb2" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets2" style="position: relative;left: 40px;">Automatic Update</td>
+					</tr>
+					<tr>
+						<td id="tdb3" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets3" style="position: relative;left: 40px;">Daily Analysis</td>
+					</tr>
+					<tr>
+						<td id="tdb4" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets4" style="position: relative;left: 40px;">Cumulative</td>
+					</tr>
+					<tr>
+						<td id="tdb5" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets5" style="position: relative;left: 40px;">Table</td>
+					</tr>
+					<tr>
+						<td id="tdb6" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets6" style="position: relative;left: 40px;">District Export</td>
+					</tr>
+					<tr>
+						<td id="tdb7" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets7" style="position: relative;left: 40px;">Taluka Export</td>
+					</tr>
+					<tr>
+						<td id="tdb8" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets8" style="position: relative;left: 40px;">Circle Export</td>
+					</tr>
+					<tr>
+						<td id="tdb9" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets9" style="position: relative;left: 40px;">District Initial</td>
+					</tr>
+					<tr>
+						<td id="tdb10" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets10" style="position: relative;left: 40px;">Taluka Initial</td>
+					</tr>
+					<tr>
+						<td id="tdb11" class="tdSearchByAddress_cf" dojoattachevent="onClick:getAssets11" style="position: relative;left: 40px;">Circle Initial</td>
+					</tr>
+				</table>
+
+			</div>
+		<div>
+			<br>
+				<table style="padding-top:5px;" cellspacing="10">
+					<tr>
+					<td>Message: </td><td id="errormessage"></td>
+					</tr>
+					<tr>
+         				<td></td><td id="clearAll" class="tdSearchByAddress_cf" dojoAttachEvent="onClick:clearALLG2" style="position: relative;left: 50px;">Clear All</td>
+					</tr>
+
+				</table>
+
+			</div>
+
+		</div>
+		<br/>
+
+	</div>
+
+</div>

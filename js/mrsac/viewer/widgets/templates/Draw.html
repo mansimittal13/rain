@@ -1,0 +1,92 @@
+<div class="widgetContent" dojoAttachPoint="containerNode">
+
+	<div class="widgetPanel"style="height:180px">
+		<table style="width:100%;">
+			<tr>
+				<td><img id="SearchPOINT" class="toolbutton" src="js/mrsac/viewer/assets/images/icons/i_draw_point.png"  dojoAttachEvent="onclick:onBuffToolButtonClick"title="Point"/></td>
+				<td><img id="SearchLINE" class="toolbutton" src="js/mrsac/viewer/assets/images/icons/i_draw_line.png"  dojoAttachEvent="onclick:onBuffToolButtonClick"title="Line"/></td>
+				<td><img id="SearchPOLYLINE" class="toolbutton" src="js/mrsac/viewer/assets/images/icons/i_draw_rect.png"  dojoAttachEvent="onclick:onBuffToolButtonClick"title="Polyline"/></td>
+				<td><img id="SearchFREEHAND_POLYLINE" class="toolbutton" src="js/mrsac/viewer/assets/images/icons/i_draw_freeline.png"  dojoAttachEvent="onclick:onBuffToolButtonClick"title="Freehand Polyline"/></td>
+				<td><img id="SearchPOLYGON" class="toolbutton" src="js/mrsac/viewer/assets/images/icons/i_draw_poly.png"  dojoAttachEvent="onclick:onBuffToolButtonClick"title="Polygon"/></td>
+				<td><img id="SearchClear1" class="toolbutton" src="js/mrsac/viewer/assets/images/icons/i_draw_text.png"dojoAttachEvent="onclick:new_fun"title="Text"/></td>
+				<td><img id="SearchClear" class="toolbutton" src="js/mrsac/viewer/assets/images/icons/i_clear.png"dojoAttachEvent="onclick:clear"title="Clear"/></td>
+
+			</tr>
+		</table>
+		<table style="width:100%;">
+			<tr>
+				<td style="position: relative;left:3%;"> Point </td>
+				<td style="position: relative;left:6%;"> Line </td>
+				<td style="position: relative;left:7%;"> Polyline </td>
+				<td style="position: relative;left:4%;"> Freehand</td>
+				<td style="position: relative;left:0%;"> Polygon </td>
+				<td style="position: relative;left:-3%;"> Text </td>
+				<td style="position: relative;left:1%;"> Clear </td>
+			</tr>
+			<tr>
+				<td style="position: relative;left:45%;top: 65%;"> Line </td>
+
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>Text</td>
+
+				<td>
+				<input data-dojo-type="dijit/form/Textarea"data-dojo-attach-point="agri"value="Text"id="tsText"/>
+				</td>
+
+			</tr>
+			<tr>
+				<td>Font</td>
+				<td>
+				<select data-dojo-type="dijit/form/FilteringSelect"data-dojo-attach-point="registry"value=""id="fontT">
+					<option value="Arial">Arial</option>
+					<option value="Courier New">Courier New</option>
+					<option value="Comic Sans MS">Comic Sans MS</option>
+					<option value="Arial Black">Arial Black</option>
+					<option value="Arial Narrow">Arial Narrow</option>
+					<option value="Century">Century</option>
+
+				</select></td>
+
+			</tr>
+			<tr>
+				<td> Size </td>
+				<td>
+				<select data-dojo-type="dijit/form/FilteringSelect"data-dojo-attach-point="registry2"value=""id="fontS">
+					<option>10pt</option>
+					<option>12pt</option>
+					<option>14pt</option>
+					<option>16pt</option>
+					<option>18pt</option>
+					<option>20pt</option>
+					<option>22pt</option>
+					<option>24pt</option>
+					<option>26pt</option>
+					<option>28pt</option>
+					<option>30pt</option>
+				</select></td>
+				<td>Color</td>
+				<td>
+				<div data-dojo-type="dijit/form/DropDownButton">
+					<span>Color</span>
+					<div data-dojo-type="dijit/ColorPalette"data-dojo-attach-point="registry1"value=""></div>
+				</div></td>
+
+			</tr>
+			<!--
+			<tr>
+			<td> Color </td>
+			<td>
+			<div data-dojo-type="dijit/form/DropDownButton">
+			<span>Color</span>
+			<div data-dojo-type="dijit/ColorPalette"data-dojo-attach-point="registry1"value=""></div>
+			</div></td>
+			</tr>-->
+
+		</table>
+
+	</div>
+
+</div>

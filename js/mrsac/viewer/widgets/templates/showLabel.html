@@ -1,0 +1,42 @@
+<div class="widgetContent" dojoAttachPoint="containerNode">
+	<!--
+	<div class="widgetPanel">
+
+	<div name="results1" id="res"dojoType="viewer/ResultListLabel"style="height:130px"></div>
+
+	</div>-->
+
+	<div class="widgetPanel">
+		<div class="formContainer">
+			<table>
+				<tr>
+					<td>Layer</td>
+					<td><select data-dojo-type="dijit/form/FilteringSelect" data-dojo-attach-point="agri"fetchProperties="{sort:[{attribute:'name', descending:false}]}"value=""dojoAttachEvent="onChange:getTaluka">
+
+					</select></td>
+				</tr>
+
+				<tr>
+					<td>Fields</td>
+					<td><select data-dojo-type="dijit/form/FilteringSelect"data-dojo-attach-point="agri1"fetchProperties="{sort:[{attribute:'name', descending:false}]}"value=""dojoAttachEvent="onChange:getVillage">
+
+					</select></td>
+
+				</tr>
+
+			</table>
+			<table>
+				<tr>
+					<td>
+					<div data-dojo-type="dijit/form/DropDownButton">
+						<span>Color</span>
+						<div data-dojo-type="dijit/ColorPalette"data-dojo-attach-point="registry1"value=""></div>
+					</div></td>
+					<td class="tdSearchByAddress_cf" id="labelToggle" data-dojo-attach-point="labelToggle" name="labelToggle"dojoAttachEvent="onClick:showLabel">Show Label</td>
+
+				</tr>
+			</table>
+
+		</div>
+	</div>
+</div>

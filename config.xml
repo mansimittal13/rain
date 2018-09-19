@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<configuration>
+	<userinterface>
+		<banner>visible</banner>
+		<title>MRSAC Portal Rainfall</title>
+		<subtitle>Department Of Planning,Government of Maharashtra</subtitle>
+		<logo>assets/images/icons/goi_logo_400.png</logo>
+		<logor>assets/images/icons/mrsac_logo_400.png</logor>
+		<stylesheet></stylesheet>
+		<menus>
+			<menu id="ToolsMenu" visible="true" icon="assets/images/icons/tools.png">Tools</menu>
+			<menu id="WidgetsMenu" visible="true" icon="assets/images/icons/search.png">Search</menu>
+			<!--
+			<menu id="ThemeMenu" visible="true" icon="assets/images/icons/globered.png">Projects</menu>
+			-->
+			<menu id="HelpMenu" visible="true" icon="assets/images/icons/helpi.png">Help</menu>
+
+		</menus>
+	</userinterface>
+	<map initialExtent="68.9995834543952 14.9995834301808 85.0004167877285 23.0004167635141" fullExtent="68.9995834543952 14.9995834301808 85.0004167877285 23.0004167635141">
+
+		<!--<map initialExtent="-140.625 -39.462890625 190.625 57.470703125" fullExtent="-179.9999 -89.9999 179.9999 89.9999">
+		-->
+		<livemaps>
+			<!-- <mapservice label="Transport" type="dynamic" visible="false" alpha="1" type1 ="BaseLayer">http://mrsac.maharashtra.gov.in/arcgis/rest/services/integrated_services/transport_settlement/MapServer</mapservice> -->
+			<mapservice label="Transport" type="dynamic" visible="false" alpha="1" type1 ="BaseLayer">http://117.240.213.123/webadpgis8/rest/services/baselayers/transport_settlement/MapServer</mapservice>
+			<mapservice label="Forest" type="dynamic" visible="false" alpha="1" type1 = "BaseLayer">http://117.240.213.123/webadpgis8/rest/services/baselayers/forest/MapServer</mapservice>
+			<mapservice label="Water resource" type="dynamic" visible="false" alpha="1" type1 = "BaseLayer">http://117.240.213.123/webadpgis8/rest/services/baselayers/water/MapServer</mapservice>
+			<mapservice label="Cadastral" type="dynamic" visible="false" alpha="1" type1 ="BaseLayer">http://117.240.213.123/webadpgis8/rest/services/baselayers/cadastral/MapServer</mapservice>
+			<mapservice label="Soil" type="dynamic" visible="false" alpha="1" type1 ="BaseLayer">http://117.240.213.123/webadpgis8/rest/services/baselayers/soil/MapServer</mapservice>
+			<mapservice label="Wasteland" type="dynamic" visible="false" alpha="1" type1 ="BaseLayer">http://117.240.213.123/webadpgis8/rest/services/baselayers/wasteLandUnion/MapServer</mapservice>
+			<mapservice label="Watershed" type="dynamic" visible="false" alpha="1" type1 ="BaseLayer">http://117.240.213.123/webadpgis8/rest/services/baselayers/watershedprioritisation/MapServer</mapservice>
+			<mapservice label="Electoral" type="dynamic" visible="false" alpha="1" type1 ="BaseLayer">http://117.240.213.123/webadpgis8/rest/services/baselayers/electoral/MapServer</mapservice>
+			<mapservice label="Village Boundary" type="dynamic" visible="false" alpha="1" type1 = "BaseLayer">http://117.240.213.123/webadpgis8/rest/services/admin2011/admin_village_16/MapServer</mapservice>
+			<mapservice label="Grampanchayat Boundary" type="dynamic" visible="false" alpha="1" type1 = "BaseLayer">http://117.240.213.123/webadpgis8/rest/services/admin2011/admin_grampanchayat_2011/MapServer</mapservice>
+			<mapservice label="Administrative Boundaries" type="dynamic" visible="true" alpha="1" type1 = "BaseLayer">http://117.240.213.123/webadpgis8/rest/services/admin2011/admin_state_2011/MapServer</mapservice>
+			
+			<mapservice label="Health Centres" type="dynamic" visible="false" alpha="1" type1 ="DepartmentLayer">http://117.240.213.123/webadpgis7/rest/services/health/health_mapping2016/MapServer</mapservice>	
+			<mapservice label="Transport Route" type="dynamic" visible="false" alpha="1" type1 ="DepartmentLayer">http://117.240.213.119/gp/rest/services/network/MaharashtraCFandSA/MapServer</mapservice>
+			
+			<!-- <mapservice label="Health Mapping" type="dynamic" visible="false" alpha="1" type1 ="DepartmentLayer">https://mrsac.org.in/gisserver2/rest/services/baselayers/health_mapping2014/MapServer</mapservice> -->
+			<mapservice label="School Location" type="dynamic" visible="false" alpha="1" type1 ="DepartmentLayer">http://117.240.213.119/gp/rest/services/education/school2017/MapServer</mapservice>
+            
+		</livemaps>
+	</map>
+	<navtools>
+		<navtool label="Zoom In" icon="assets/images/small_icons/i_zoomin.png" menu="menuNav">zoomin</navtool>
+		<navtool label="Zoom Out" icon="assets/images/small_icons/i_zoomout.png" menu="menuNav">zoomout</navtool>
+		<navtool label="Full Extent" icon="assets/images/small_icons/i_zoomfull.png" menu="menuNav">zoomfull</navtool>
+		<navtool label="Move Map" icon="assets/images/small_icons/i_pan.png" menu="menuNav">pan</navtool>
+	</navtools>
+	<widgets>
+		<widget label="Buffer" icon="assets/images/icons/GIS_Icon.png" menu="ToolsMenu" config="widgets/config/BufferWidget.json" Theme ="false">mrsac.viewer.widgets.BufferWidget</widget>
+		<widget label="Measurement" icon="assets/images/icons/Measurement.png" menu="ToolsMenu" Theme ="false">mrsac.viewer.widgets.Measurement</widget>
+		<widget label="Bookmarks" icon="assets/images/icons/i_bookmark.png" menu="ToolsMenu" config="widgets/config/BookmarkWidget.json" Theme ="false">mrsac.viewer.widgets.BookmarkWidget</widget>
+		<widget label="Village Search" icon="assets/images/icons/searchgeneral.png" menu="WidgetsMenu"  Theme ="false">mrsac.viewer.widgets.Generalsearch</widget>
+		<widget label="Locate By Name" icon="assets/images/icons/i_pushpin.png" menu="WidgetsMenu" config="widgets/config/LocateWidget.json" Theme ="false">mrsac.viewer.widgets.locatebyname</widget>
+		<widget label="Locate By Coordinates" icon="assets/images/icons/i_pushpin.png" menu="WidgetsMenu" config="widgets/config/LocateWidget.json" Theme ="false">mrsac.viewer.widgets.locatebylat</widget>
+		<widget label="Identify" icon="assets/images/icons/i_about.png" menu="ToolsMenu" Theme ="false">mrsac.viewer.widgets.Identify</widget>
+		<!-- <widget label="identifyNew" icon="assets/images/icons/i_about.png" menu="ToolsMenu" Theme ="false">mrsac.viewer.widgets.identifyNew</widget> -->
+		<widget label="Query Builder" icon="assets/images/icons/bullet_question.png" menu="ToolsMenu" Theme ="false">mrsac.viewer.widgets.builder</widget>
+		<widget label="Draw" icon="assets/images/icons/gimp2.png" menu="ToolsMenu" Theme ="false">mrsac.viewer.widgets.Draw</widget>
+		<widget label="Elevation" icon="assets/images/icons/elevation.png" menu="ToolsMenu" Theme ="false">mrsac.viewer.widgets.elevation</widget>
+		<widget label="Routing" icon="assets/images/icons/RouteA.png" menu="ThemeMenu" config="widgets/config/Route.json" Theme ="true">mrsac.viewer.widgets.Route</widget>
+		<widget label="Show Label" icon="assets/images/icons/label.png" menu="ToolsMenu" Theme ="false">mrsac.viewer.widgets.showLabel</widget>
+		<widget label="Find School" icon="assets/images/icons/HigherSecondary.png" menu="ThemeMenu" Theme ="true" config="widgets/config/BufferWidget.json">mrsac.viewer.widgets.SchoolFinder</widget>
+         <widget label="Rainfall" icon="assets/images/icons/RouteA.png" menu="ThemeMenu" config="widgets/config/Route.json" Theme ="true">mrsac.viewer.widgets.rainfall</widget>
+         <widget label="Drought" icon="assets/images/icons/RouteA.png" menu="ThemeMenu" config="widgets/config/Route.json" Theme ="true">mrsac.viewer.widgets.drought</widget>
+        <!-- <widget label="Peg Your Location" icon="assets/images/icons/gimp2.png" menu="ToolsMenu" Theme ="false">mrsac.viewer.widgets.Peglocation</widget> -->
+	</widgets>
+	<navmenu>
+		<nav label="TOC" icon="assets/images/icons/tocIcon.png" menu="ToolsMenu" Theme ="false"></nav>
+		<nav label="Peg Your Location" icon="assets/images/icons/gimp2.png" menu="ToolsMenu" id="Peglocation" Theme ="false"></nav> 
+		
+	</navmenu>
+	<links>
+		<link label="Help" icon="assets/images/icons/i_help.png" menu="HelpMenu">geninfo/TermsofUseGeoportal.html</link>
+		<link label="Home" icon="assets/images/icons/i_home.png" menu="HelpMenu">http://www.mrsac.gov.in/en</link>
+		<link label="Resources" icon="assets/images/icons/i_folder2.png" menu="HelpMenu">http://www.mrsac.gov.in/en</link>
+	</links>
+	<proxytype>asp</proxytype>
+</configuration>

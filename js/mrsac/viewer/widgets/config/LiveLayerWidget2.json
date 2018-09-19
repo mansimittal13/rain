@@ -1,0 +1,12 @@
+
+{
+	livelayer: {
+		layer: "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Louisville/LOJIC_PublicSafety_Louisville/MapServer/3",
+		query: "OBJECTID > 0",
+		fields: ["PD_NAME","ADDRESS"],
+		titleField: "PD_NAME",
+		linkField: "",
+		refreshRate: 600, //seconds
+		zoomScale: 5000
+	}
+}

@@ -1,0 +1,41 @@
+<div class="widgetContent" dojoAttachPoint="containerNode">
+	<div class="widgetPanel" buttonIcon="assets/images/small_icons/i_mailbox.png" buttonText="${i18nStrings.panelTitle0}">
+		<textarea id="address">Nagpur,India</textArea>
+		<table class="widgetTable">
+			<tbody dojoAttachPoint="geocodingInputTable">
+
+				<tr dojoAttachPoint="geocodingButtonRow">
+					<th>&nbsp;</th>
+					<td>
+					<button name="btnLocateAddress" type="button" dojoType="dijit.form.Button">
+						${i18nStrings.btnLocate}
+					</button>
+					<button name="btnClearAddress" type="button" dojoType="dijit.form.Button" >
+						${i18nStrings.btnClear}
+					</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="widgetPanel" buttonIcon="assets/images/small_icons/i_table.png" buttonText="${i18nStrings.panelTitle2}">
+		<table style="position: absolute;right: 10px;">
+			<tr>
+				<td>
+				<button name="btnClearCoords" type="button" dojoType="dijit.form.Button"  dojoAttachEvent="onClick:onClear">
+					Clear All
+				</button></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td><img class="loader" src="" alt="spinner" /></td><td id="mess" class="resultsMsg"></td>
+
+			</tr>
+		</table>
+		<div name="results" dojoType="viewer/ResultList"style="height:140px">
+
+		</div>
+
+	</div>
+</div>

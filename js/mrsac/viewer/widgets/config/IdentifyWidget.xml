@@ -1,0 +1,253 @@
+﻿<configuration>
+	<identifylayeroption>visible</identifylayeroption>
+	<identifytolerance>5</identifytolerance>
+	<defaultzoomscale>5000</defaultzoomscale>
+	<keepidentifyactive>true</keepidentifyactive>
+	<returngeometryforzoom>true</returngeometryforzoom>
+	<enablelineselect>true</enablelineselect>
+	<enableextentselect>true</enableextentselect>
+	<enablepolyselect>true</enablepolyselect>
+	<enablecircleselect>true</enablecircleselect>
+	<enableellipseselect>true</enableellipseselect>
+	<enablemouseovergraphicsinfo>false</enablemouseovergraphicsinfo>
+	<enablemouseoverrecordinfo>true</enablemouseoverrecordinfo>
+	<enablegraphicclickinfo>true</enablegraphicclickinfo>
+	<usemaptime>false</usemaptime>
+	<infoautoclosemilliseconds>2000</infoautoclosemilliseconds><!-- 2 seconds -->
+	<autoactivatedtool>mappoint</autoactivatedtool><!-- possible values are extent or polygon or mappoint or polyline or nothing -->
+	<excludebasemaps>false</excludebasemaps>
+	<disablepopuplinks>false</disablepopuplinks>
+	<disablelayerdropdown>false</disablelayerdropdown>
+	<disablealllayerschoice>false</disablealllayerschoice>
+	<replacenullswithemptystring>true</replacenullswithemptystring>
+	<labels>
+		<zoom2message>Click to Zoom to Point</zoom2message>
+		<identifylabel>Identify</identifylabel>
+		<resultslabel>Results</resultslabel>
+		<descriptionlabel>Use the identify tool to identify features on the map:</descriptionlabel>
+		<pointlabel>Identify by Point</pointlabel>
+		<linelabel>Identify by Polyline</linelabel>
+		<rectlabel>Identify by Rectangle</rectlabel>
+		<polylabel>Identify by Polygon</polylabel>
+		<circlelabel>Identify by Circle</circlelabel>
+		<ellipselabel>Identify by Ellipse</ellipselabel>
+		<clearlabel>Clear</clearlabel>
+		<loadinglabel>Loading...</loadinglabel>
+		<removeresultmessage>Remove Result</removeresultmessage>
+		<idfrom>Identify From</idfrom>
+		<noresultsfoundlabel>No Results Found</noresultsfoundlabel>
+		<resultsfoundlabel>Results Found</resultsfoundlabel>
+		<alllayers>All Layers</alllayers>
+		<layersremaining>layers remaining:</layersremaining>
+		<copylabel>Copy results to clipboard</copylabel>
+	</labels>
+	<layers onlythese="false">
+		<layer>
+			<useproxy>false</useproxy>
+			<name>AGO Organizational Layer</name>
+			<id>0</id>
+			<url>https://services.arcgis.com/EguFTd9xPXEoDtC7/ArcGIS/rest/services/Polygons/FeatureServer</url>
+			<fields>
+				<field name="FID" alias="Feature ID" />
+				<field name="Title " alias="Title " />
+				<field name="FullDescri" alias="Full Description" />
+				<field name="Website" />
+				<field name="Location" />
+			</fields>
+			<links>
+				<link includeinresults="false" field="Website"
+				alias="View Website" tooltip="Click to View Website">
+					<linkprefix />
+					<linksuffix />
+					<iconfield />
+					<iconprefix />
+					<iconsuffix />
+				</link>
+			</links>
+			<zoomscale>15000</zoomscale>
+			<forcescale>true</forcescale>
+		</layer>
+		<layer>
+			<name>Zoning</name>
+			<id>2</id>
+			<url>http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Louisville/LOJIC_LandRecords_Louisville/MapServer</url>
+			<fields>
+				<field name="ZONING_NAME" alias="Zoning Name" />
+				<field name="ZONING_TYPE" alias="Zoning Type" popuponly="true" />
+			</fields>
+			<links/>
+			<zoomscale>15000</zoomscale>
+			<forcescale>true</forcescale>
+		</layer>
+		<layer>
+			<name>Land Use</name>
+			<id>1</id>
+			<url>http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Louisville/LOJIC_LandRecords_Louisville/MapServer</url>
+			<fields>
+				<field name="LANDUSE_NAME" alias="Landuse Name" />
+			</fields>
+			<links/>
+			<zoomscale>15000</zoomscale>
+			<forcescale>true</forcescale>
+		</layer>
+		<layer>
+			<name>Owner Parcels</name>
+			<id>67</id>
+			<url>http://someserver/ArcGIS/rest/services/someservice/MapServer</url>
+			<fields>
+				<field name="PPIN" />
+				<field name="NAME" />
+				<field name="STREET_ADDRESS" popuponly="true" />
+				<field name="USE_CODE" popuponly="true" />
+				<field name="CALC_ACRES" popuponly="true" />
+				<field name="EXEMPTION_CODE1" popuponly="true" />
+				<field name="ADDRESS_1" popuponly="true" />
+				<field name="ADDRESS_3" popuponly="true" />
+				<field name="PRIOR_TAX_YEAR" popuponly="true" currencyformat="$|2|,|." />
+				<field name="SALE_DATE" popuponly="true" dateformat="MM/DD/YYYY" useutc="true" />
+				<field name="LAST_DEED_BOOK" popuponly="true" />
+				<field name="LAST_DEED_PAGE" popuponly="true" />
+				<field name="ZIPCODE_1" popuponly="true" />
+				<field name="NEIGHBORHOOD" popuponly="true" />
+				<field name="SUBDIVISION" popuponly="true" />
+				<field name="SALE_PRICE" popuponly="true" currencyformat="$|2|,|." />
+				<field name="TOTAL_TRUE" popuponly="true" currencyformat="$|2|,|." />
+				<field name="LAND_PRICE" popuponly="true" currencyformat="$|2|,|." />
+				<field name="IMPR_PRICE" popuponly="true" currencyformat="$|2|,|." />
+				<field name="ADJ_PRICE" popuponly="true" currencyformat="$|2|,|." />
+				<field name="OVER_COND" popuponly="true" />
+				<field name="SHAPE_Length" popuponly="true" numberformat="2|,|." />
+				<field name="SHAPE_Area" popuponly="true" numberformat="2|,|." />
+			</fields>
+			<links/>
+			<zoomscale>12000</zoomscale>
+			<forcescale>true</forcescale>
+		</layer>
+		<layer>
+			<name>Jacksonville City Limits</name>
+			<id>73</id>
+			<url>http://someserver/ArcGIS/rest/services/someservice/MapServer</url>
+			<fields>
+				<field name="Name" alias="Name" />
+			</fields>
+			<links/>
+			<zoomscale>15000</zoomscale>
+			<forcescale>true</forcescale>
+		</layer>
+		<layer>
+			<name>Traffic Cameras</name>
+			<id>2</id>
+			<url>http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Louisville/LOJIC_PublicSafety_Louisville/MapServer</url>
+			<fields>
+				<field name="ONLINE" alias="Camera Online" />
+				<field name="DESCRIPTION" alias="Description"
+				popuponly="true" />
+				<field name="LAST_UPDATED" alias="Last Updated"
+				popuponly="true" />
+				<field name="URL" alias="URL" popuponly="true" />
+			</fields>
+			<links>
+				<link includeinresults="false" field="URL" alias=""
+				tooltip="View Traffic Image">
+					<linkprefix />
+					<linksuffix />
+					<iconfield />
+					<iconprefix />
+					<iconsuffix>http://help.arcgis.com/en/webapps/flexviewer/live/assets/images/i_camera.png</iconsuffix>
+				</link>
+				<link includeinresults="true" field="ONLINE" popuplinktype="text"
+				alias="get me out of here" tooltip="">
+					<linkprefix />
+					<linksuffix />
+					<iconfield />
+					<iconprefix />
+					<iconsuffix>http://help.arcgis.com/en/webapps/flexviewer/live/assets/images/i_globe.png</iconsuffix>
+				</link>
+			</links>
+			<zoomscale>2000</zoomscale>
+			<forcescale>true</forcescale>
+		</layer>
+		<layer>
+			<name>Police Stations</name>
+			<id>3</id>
+			<url>http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Louisville/LOJIC_PublicSafety_Louisville/MapServer</url>
+			<fields>
+				<field name="NAME" alias="Name" />
+				<field name="ADDRESS" alias="Address" />
+			</fields>
+			<links/>
+			<zoomscale>2000</zoomscale>
+			<forcescale>true</forcescale>
+		</layer>
+		<layer>
+			<name>Emergency Sirens</name>
+			<id>0</id>
+			<url>http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Louisville/LOJIC_PublicSafety_Louisville/MapServer</url>
+			<fields>
+				<field name="LOCAL" alias="Local" />
+				<field name="ADDRESS" alias="Address" />
+			</fields>
+			<links/>
+			<zoomscale>2000</zoomscale>
+			<forcescale>true</forcescale>
+		</layer>
+		<layer>
+			<name>Fire Stations</name>
+			<id>1</id>
+			<url>http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Louisville/LOJIC_PublicSafety_Louisville/MapServer</url>
+			<fields>
+				<field name="NAME" alias="Name" />
+				<field name="ADDRESS" alias="Address" />
+				<field name="LFD_DIST" alias="Louiseville Fire District" />
+			</fields>
+			<links/>
+			<zoomscale>2000</zoomscale>
+			<forcescale>true</forcescale>
+		</layer>
+		<layer>
+			<name>Roads</name>
+			<id>1</id>
+			<url>http://someserver/ArcGIS/rest/services/someservice/MapServer</url>
+			<fields>
+				<field name="Road Name" />
+				<field name="Classification" />
+				<field name="Length of Road" numberformat="2|,|." />
+				<field name="Width of Road" />
+				<field name="Left From Address" />
+				<field name="Left To Address" />
+				<field name="Right From Address" />
+				<field name="Right To Address" />
+				<field name="Before Directional" />
+				<field name="Road Type" />
+				<field name="Road Name" />
+				<field name="Road Suffix" />
+				<field name="After Directional " />
+				<field name="Zip Code Left" />
+				<field name="Zip Code Right" />
+			</fields>
+			<links/>
+			<zoomscale>12000</zoomscale>
+			<forcescale>true</forcescale>
+		</layer>
+		<excludelayer name="Condos" />
+		<excludelayer url="http://services.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer" id="0"/>
+		<excludelayer url="http://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Reference_Overlay/MapServer" id="0"/>
+		<excludelayer url="http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer"/>
+		<excludelayer url="http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer"/>
+	</layers>
+	<symbols>
+		<simplefillsymbol color="0x448ccb" alpha="0.4"
+		style="solid">
+			<outline color="0x448ccb" alpha="0.8" width="2" />
+		</simplefillsymbol>
+		<simplemarkersymbol style="circle" size="12"
+		color="0x448ccb" alpha="0.8" xoffset="0" yoffset="0" angle="0">
+			<outline style="solid" color="0xffffff" alpha="0.8"
+			width="1" />
+		</simplemarkersymbol>
+		<picturemarkersymbol url="assets/images/i_info.png"
+		height="30" width="30" xoffset="0" yoffset="0" />
+		<simplelinesymbol color="0x448ccb" alpha="0.8"
+		width="2" />
+	</symbols>
+</configuration>

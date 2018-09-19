@@ -1,0 +1,158 @@
+<div class="mrsacGridFrame">
+
+	<div style="border-bottom: 1px solid silver">
+<!--		<img src="img/table/TableOptions.png" class="ImgElementClass" data-dojo-attach-event="click:AddColumn" title="Add Column">
+		<img src="img/table/addRecord.png" class="ImgElementClass" data-dojo-attach-event="click:AddRecord" title="Add Record">-->
+		<!--<img src="img/table/SelectByAttributes.png" class="ImgElementClass" data-dojo-attach-event="click:ZoomToSelection" title="ZoomToSelection">-->
+<!--		<img src="img/table/SwitchSelection.png" class="ImgElementClass" data-dojo-attach-event="click:SwitchSelection" title="Switch Selection">-->
+		<img src="img/table/ClearSelection.png" class="ImgElementClass" data-dojo-attach-event="click:Clearselected" title="Clear Selected">
+		<img src="img/table/ZoomToSelected.png" class="ImgElementClass" data-dojo-attach-event="click:ZoomToSelection" title="ZoomToSelection">
+		<img src="img/table/DeleteSelection.png" class="ImgElementClass" data-dojo-attach-event="click:DeleteSelected" title="Delete Selected">
+		<img src="img/table/turnOn.png" class="ImgElementClass" data-dojo-attach-event="click:TurnAllFieldsOn" title=" Turn All Fields On">
+		
+		<img src="img/table/PrintTable.png" class="ImgElementClass" data-dojo-attach-event="click:printAll" title=" Print Table">
+		
+		
+	
+
+	</div>
+	<div class="planar">
+		<table>
+			<tr>
+				<td style="width:100%"><label data-dojo-attach-point="mrsacTableParentlabel"></label></td>
+				<td ><img src="img/table/close.png" class="TableClose" data-dojo-attach-event="click:oncloseTable" ></td>
+			</tr>
+		</table>
+
+	</div>
+
+	<div data-dojo-attach-point="dialog" data-dojo-type="dijit.Dialog" title="Add Field">
+
+		<table style="padding:20px">
+			<tr>
+				<td class="simple">Name</td>
+				<td>
+				<input name="TextBox"   data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="TextBox"/>
+				</td>
+			</tr>
+			<tr>
+				<td class="simple">Type</td>
+				<td>
+				<select data-dojo-type="dijit/form/ComboBox"  name="TypeOptions" data-dojo-attach-point="TypeOptions">
+					<option>Numeric</option>
+					<option selected>Code</option>
+					<option selected>Text</option>
+					<option>Date</option>
+				</select></td>
+			</tr>
+		</table>
+		<label style="color:grey">Field Properties</label>
+		<table style="border:1px solid grey;border-bottom: none;border-right:none">
+			<tr>
+				<td style="border-bottom: 1px solid grey;border-right:1px solid grey;" class="simple">Alias</td><td data-dojo-attach-point="Alias" style="border-bottom: 1px solid grey;border-right:1px solid grey;" contenteditable></td>
+			</tr>
+			<tr >
+				<td style="border-bottom: 1px solid grey;border-right:1px solid grey" class="simple">Allow Null Values</td><td data-dojo-attach-point="NullValBoolean" style="border-bottom: 1px solid grey;border-right:1px solid grey;width:100px" contenteditable>Yes</td>
+			</tr>
+			<tr >
+				<td style="border-bottom: 1px solid grey;border-right:1px solid grey" class="simple">Default Value</td><td data-dojo-attach-point="DefaultVal" style="border-bottom: 1px solid grey;border-right:1px solid grey" contenteditable></td>
+			</tr>
+
+		</table>
+		<button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-event="click:onAddColOk">
+			Ok
+
+		</button>
+		<button data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-event="click:onAddColCancel">
+			cancel
+
+		</button>
+
+	</div>
+	<div  data-dojo-attach-point="GridDiv" style="height:150px">
+
+		<div data-dojo-type="dijit.Menu" data-dojo-attach-point="headerMenu" style="display: none;">
+			<!--<div data-dojo-type="dijit.MenuItem" data-dojo-attach-event="click:onSortAscend">
+			<img src="img/sortascend.png" style="width:10px;height:10px;font-size:10px">
+			Sort Ascending
+			</div>
+			<div data-dojo-type="dijit.MenuItem"  data-dojo-attach-event="click:onSortDescend"><img src="img/sortdescend.png" style="width:10px;height:10px;font-size:10px">
+			Sort Descending
+			</div>-->
+			<div data-dojo-type="dijit.MenuItem" data-dojo-attach-point="TurnOff" data-dojo-attach-event="click:TurnOffField"><img src="img/table/Turnoff.png" style="width:10px;height:10px;font-size:10px">
+				Turn Off Field
+			</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-attach-event="click:LockingColumns"><img src="img/table/lock.png" style="width:10px;height:10px;font-size:10px">
+				Freeze/Unfreeze Collumns
+			</div>
+			<!--<div data-dojo-type="dijit.MenuItem"><img src="img/Caculator.png" style="width:10px;height:10px;font-size:10px">
+			Field	Caculator
+			</div>-->
+		</div>
+		<div data-dojo-type="dijit.Menu" data-dojo-attach-point="rowMenu"  style="display: none;">
+			<div data-dojo-type="dijit.MenuItem" data-dojo-attach-event="click:FlashToPointing"><img src="img/table/flash.png" style="width:10px;height:10px;font-size:10px">
+				Flash
+			</div>
+			<div data-dojo-type="dijit.MenuItem"  data-dojo-attach-event="click:ZoomToPointing"><img src="img/table/zoom.png" style="width:10px;height:10px;font-size:10px">
+				Zoom To
+			</div>
+			<div data-dojo-type="dijit.MenuItem"  data-dojo-attach-event="click:PanToPointing"><img src="img/table/pan.png" style="width:10px;height:10px;font-size:10px">
+				Pan To
+			</div>
+			<div data-dojo-type="dijit.MenuItem"><img src="img/table/question.png" style="width:10px;height:10px;font-size:10px">
+				Identify
+			</div>
+			<!--<div data-dojo-type="dijit.MenuItem" data-dojo-attach-event="click:SelectUnselect"><img src="img/table/SelectUnselect.png" style="width:10px;height:10px;font-size:10px">
+				Select/Unselect
+			</div>-->
+			<div data-dojo-type="dijit.MenuItem" data-dojo-attach-event="click:ZoomToSelection"><img src="img/table/zoom-selection.png" style="width:10px;height:10px;font-size:10px">
+				Zoom To selected
+			</div>
+			<div data-dojo-type="dijit.MenuItem" data-dojo-attach-event="click:Clearselected"><img src="img/table/ClearSelected.png" style="width:10px;height:10px;font-size:10px">
+				Clear Selected
+			</div>
+			<!--<div data-dojo-type="dijit.MenuItem" data-dojo-attach-event="click:CopyUnselected"><img src="img/table/copy.png" style="width:10px;height:10px;font-size:10px">
+			Copy Selected
+			</div>-->
+			<div data-dojo-type="dijit.MenuItem" data-dojo-attach-event="click:DeleteSelected"><img src="img/table/selected-delete.png" style="width:10px;height:10px;font-size:10px">
+				Delete Selected
+			</div>
+			<!--<div data-dojo-type="dijit.MenuItem"  ><img src="img/table/zoomtohighlight.png" style="width:10px;height:10px;font-size:10px">
+			Zoom To Highlighted
+			</div>
+			<div data-dojo-type="dijit.MenuItem"><img src="img/table/unselectHighlighted.png" style="width:10px;height:10px;font-size:10px">
+			Unselect Highlighted
+			</div>
+			<div data-dojo-type="dijit.MenuItem"><img src="img/table/ReselectHighlighted.png" style="width:10px;height:10px;font-size:10px">
+			Reselect Highlighted
+			</div>
+			<div data-dojo-type="dijit.MenuItem"><img src="img/table/DeleteHighlighted.png" style="width:10px;height:10px;font-size:10px">
+			Delete Highlighted
+			</div>-->
+		</div>
+
+	</div>
+	<div  class="ClassForBack">
+		<table data-dojo-attach-point="FooterTable">
+			<tr>
+				<td><img src="img/table/MoveToBeginingA.png" data-dojo-attach-event="click:MoveToBeginingA"></td>
+				<td data-dojo-attach-event="click:MoveToPreviousRecord"><img src="img/table/MoveToPreviousRecord.png" ></td>
+				<td>
+				<input  data-dojo-type="dijit/form/TextBox" value="1" data-dojo-props="intermediateChanges:true"  data-dojo-attach-point="RecordValue" style="width:50px"  data-dojo-attach-event="keyup:onSearchAll">
+				</input></td>
+				<td data-dojo-attach-event="click:MoveToNextRecord"><img src="img/table/MoveToNextRecord.png"></td>
+				<td data-dojo-attach-event="click:MoveToEndA"><img src="img/table/MoveToEndA.png"></td>
+
+				<!--<td><img src="img/ShowAllRecords.png" class="FooterTableGeneral" ></td>
+				<td><img src="img/ShowSelectedRecords.png" class="FooterTableGeneral"></td>-->
+				<td><span data-dojo-attach-point="footerInfoNode" class="FooterInfo">No records selected...!</span></td>
+			</tr>
+		</table>
+	</div>
+	<div class="mrsacTableNameDiv"  data-dojo-attach-event="click:onSelectChild" data-dojo-attach-point="mrsacTableNameDiv">
+		${TitleText}
+	</div>
+<!--    <div id="headerContainer" style="display: none">
+        
+    </div>-->
+</div>

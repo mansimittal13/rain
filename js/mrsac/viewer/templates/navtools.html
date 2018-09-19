@@ -1,0 +1,25 @@
+<div style="position: absolute;bottom: 50px;left: 30px;z-index: 6;">
+	<img src="img/settings.png" style="left:-25px;bottom:-50px;position:absolute;cursor:pointer;height: 30px;width:30px;" dojoAttachEvent="onmouseover:onmouseoverimg, onmouseout:outmouseoverimg"/>
+	<img id="firstSep" src="img/separator_icon.png" style="left:-3px;bottom:-49px;position:absolute;cursor:pointer;height: 25px;width:25px;"/>
+
+	<div class="latlongbar" id="latlongbar"></div>
+	<img id="secSep" src="img/separator_icon.png" style="left:336px;bottom:-49px;position:absolute;cursor:pointer;height: 25px;width:25px;"/>
+
+	<div class="footertool" style="position:absolute;bottom:-27px;left:-20px;display:none">
+
+		<div class="buttons" dojoAttachEvent="onmouseover:onMouseOverlist, onmouseout:onMouseOutlist"style="background-color: rgb(211, 211, 211);opacity:0.95">
+
+			<button id="mercator" class="btn btn-primary btn-wide" dojoAttachEvent="onclick:basemapButtonBar_changeHandler"style="text-align: left;">
+				Metre Coord. System (M)
+			</button>
+			<button id="dms" class="btn btn-primary btn-wide" dojoAttachEvent="onclick:basemapButtonBar_changeHandler"style="text-align: left;">
+				Deg Min Sec (DMS)
+			</button>
+			<button id="geo" class="btn btn-primary btn-wide" dojoAttachEvent="onclick:basemapButtonBar_changeHandler"style="text-align: left;">
+				Geographic (DD)
+			</button>
+
+		</div>
+	</div>
+
+</div>

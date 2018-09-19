@@ -1,0 +1,31 @@
+
+{
+	search: {
+		layers: [
+			{
+				name: "Parcels",
+				url: "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Louisville/LOJIC_LandRecords_Louisville/MapServer/0",
+				expression: "PARCELID = '[value]'",
+				textSearchField: "PARCELID",
+				textSearchSampleValue: "181001490000",
+				graphicalSearch: true,
+				fields: ["PARCELID"],
+				titleField: "PARCELID",
+				linkField: "",				
+			},
+			{
+				name: "MHCIRCLEHQ",
+				url: "http://117.240.186.23:6080/arcgis/rest/services/mrsac/rainfall/MapServer/0",
+				expression: "DISTRICT = 'Amravati'",
+				textSearchField: "DISTRICT",
+				textSearchSampleValue: "Amravati",
+				graphicalSearch: true,
+				fields: ["OBJECTID","DISTRICT"],
+				titleField: "DISTRICT ",
+				linkField: "",
+				zoomScale: 10000
+			}
+		],
+		zoomScale: 10000
+	}
+}

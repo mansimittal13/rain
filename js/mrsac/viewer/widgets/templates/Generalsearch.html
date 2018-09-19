@@ -1,0 +1,64 @@
+<div class="widgetContent" dojoAttachPoint="containerNode" style="width:340px">
+	<div id="progress" class="progress hidden"></div>
+	<div class="widgetPanel" buttonIcon="assets/images/small_icons/i_searchtext.png"buttonText="Search">
+		<div style="height:100px;">
+			<div id="search" style="left: 25px">
+				<p style="left: 20px">
+					Enter District,Tahsil,Village or Census Code :
+				</p>
+
+				<input type="text" name="searchText" dojoType="dijit/form/TextBox" value="Arvi"data-dojo-attach-point="arviT" id="searchwid">
+
+				<div class="btn btn-primary" dojoAttachEvent="onclick:doFind"style="padding: 2px 12px;">
+					Find
+				</div>
+				<div class="btng btn-primaryg" style="position: absolute;top: 60px;left: 2px" dojoAttachEvent="onclick:clearResults">
+					Clear
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="widgetPanel" buttonIcon="assets/images/small_icons/i_table.png"buttonText="Result">
+		<table>
+			<tr>
+				<td class="resultsMsg1"></td>
+			</tr>
+		</table>
+
+		<div name="results" dojoType="viewer/ResultList2" style="height:100px"></div>
+
+	</div>
+
+	<div class="widgetPanel" buttonIcon="assets/images/small_icons/i_tools.png"buttonText="Search by Location">
+		<table>
+			<tr>
+				<td>District</td>
+				<td><select data-dojo-type="dijit/form/FilteringSelect" data-dojo-attach-point="agri"fetchProperties="{sort:[{attribute:'name', descending:false}]}"value=""dojoAttachEvent="onChange:getTaluka">
+
+				</select></td>
+			</tr>
+
+			<tr>
+				<td>Taluka</td>
+				<td><select data-dojo-type="dijit/form/FilteringSelect"data-dojo-attach-point="agri1"fetchProperties="{sort:[{attribute:'name', descending:false}]}"value=""dojoAttachEvent="onChange:getVillage">
+
+				</select></td>
+
+			</tr>
+			<tr>
+				<td> Village </td>
+				<td><select data-dojo-type="dijit/form/FilteringSelect" data-dojo-attach-point="agri2"fetchProperties="{sort:[{attribute:'name', descending:false}]}"dojoAttachEvent="onChange:getCode"></select></td>
+			</tr>
+
+		</table>
+		<div class="btng btn-primaryg" style="margin-top: 20px;"  dojoAttachEvent="onclick:clearResults">
+			Clear
+		</div>
+
+		<div name="results1" dojoType="viewer/ResultList2" style="height:50px"></div>
+
+	</div>
+
+</div>
+

@@ -1,0 +1,60 @@
+<div class="widgetContent" dojoAttachPoint="containerNode">
+
+	<div class="widgetPanel" buttonIcon="assets/images/small_icons/i_pushpin.png" buttonText="${i18nStrings.panelTitle1}">
+		<table class="widgetTable">
+			<tr>
+				<th class="rowHeader">${i18nStrings.promptX}:</th>
+				<td>
+				<input name="longitude" type="text" dojoType="dijit.form.NumberTextBox" value="79"/>
+				</td>
+			</tr>
+			<tr>
+				<th class="rowHeader">${i18nStrings.promptY}:</th>
+				<td>
+				<input name="latitude" type="text" dojoType="dijit.form.NumberTextBox" value="21"/>
+				</td>
+			</tr>
+			<tr>
+				<th class="rowHeader">${i18nStrings.promptSR}:</th>
+				<td>
+				<select name="projection" dojoType="dijit.form.FilteringSelect">
+					<option> Web Mercater 102100</option>
+				</select></td>
+			</tr>
+			<tr>
+				<th class="rowHeader">${i18nStrings.promptEx}:</th>
+				<td>79, 21</td>
+			</tr>
+			<tr>
+				<th>&nbsp;</th>
+				<td>
+				<button name="btnLocateCoords" type="button" dojoType="dijit.form.Button">
+					${i18nStrings.btnLocate}
+				</button>
+				<button name="btnClearCoords" type="button" dojoType="dijit.form.Button"  dojoAttachEvent="onclick:shutdown">
+					${i18nStrings.btnClear}
+				</button></td>
+			</tr>
+		</table>
+	</div>
+	<div class="widgetPanel" buttonIcon="assets/images/small_icons/i_table.png" buttonText="${i18nStrings.panelTitle2}">
+		<table style="position: absolute;right: 10px;">
+			<tr>
+				<td>
+				<button name="btnClearCoords" type="button" dojoType="dijit.form.Button"  dojoAttachEvent="onclick:onCoordClear">
+					Clear All
+				</button></td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td><img class="loader" src="" alt="spinner" /></td><td id="mess" class="resultsMsg"></td>
+
+			</tr>
+		</table>
+		<div name="results" dojoType="viewer/ResultList"style="height:140px">
+
+		</div>
+
+	</div>
+</div>

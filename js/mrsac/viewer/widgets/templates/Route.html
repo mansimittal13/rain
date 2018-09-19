@@ -1,0 +1,307 @@
+<div class="ThemewidgetContent" dojoAttachPoint="containerNode">
+	<div class="ThemewidgetPanel">
+		<div style="position: absolute;top:10px;right:40px">
+			<table>
+				<tr>
+
+					<td><img  src="./img/printb.png" style="width:20px;height:20px;cursor: pointer;"dojoAttachEvent="onClick:printDirections"title="Print"/></td>
+					<td><img src="./img/textc.png" style="width:20px;height:20px;cursor: pointer;"dojoAttachEvent="onClick:saveTextAsFile"title="Generate Text File"/></td>
+				</tr>
+			</table>
+
+		</div>
+		<div id="RoutingDivContainer" >
+
+			<table style="width: 100%; margin: 5px 5px 8px -1px; ">
+				<tr>
+					<td id="tdsearchme" class="tdSearchByUnSelectedPrecinct" dojoAttachEvent="onclick:SearchByAddress">By Location</td>
+					<td id="tdSearchname" class="tdSearchByAddress"  dojoAttachEvent="onclick:SearchByclick">By Click</td>
+
+				</tr>
+			</table>
+
+		</div>
+		<div class="panelRoute">
+			<div  id="wholeDiv" >
+				<div id="Locateclick" align="left" >
+
+					<table>
+						<tr>
+							<td style="width: 25px;"><img style="height: 30px;width: 30px;cursor: pointer"  src="./img/tagfirststop.png" /></td>
+							<td style="width: 175px;"><select data-dojo-type="dijit/form/FilteringSelect"  id="firststopC" name="firststopC" dojoAttachEvent="onChange:selectSCODE"style="width: 100%"  fetchProperties="{sort:[{attribute:'name', descending:false}]}">
+
+							</select></td>
+							<td><span name="routetext" id="routetext" style="font-size: 12px;cursor: pointer;font-family: arial,helvetica,sans-serif;color: black"></td>
+
+						</tr>
+
+					</table>
+					<table>
+						<tr>
+							<td style="width: 100px"></td>
+							<td  class="linkstyle"><span id="stoplink1" style="color: #104E8B;font-weight: 900;" dojoAttachEvent="onClick:appendstop" > Stops</span></td>
+
+						</tr>
+
+					</table>
+					<table id="stopstab"  cellpadding="2" cellspacing="2" style="display: none">
+						<tr>
+							<td id="midstop" style="width: 30px;font-size: 12px;cursor: pointer;font-family: arial,helvetica,sans-serif;color: grey"><img style="height: 20px;width: 20px;cursor: pointer;margin-left: 5px"  src="./img/spherestop.png"/></td>
+							<td style="width: 175px"><select data-dojo-type="dijit/form/FilteringSelect"  id="stopC" name="stopC" dojoAttachEvent="onChange:selectSCODES"   style="width: 100%"  fetchProperties="{sort:[{attribute:'name', descending:false}]}">
+
+							</select></td>
+							<td><img src="./img/blueatt.png" id="stoplistshow" style="height: 25px;width: 25px;cursor: pointer"   dojoAttachEvent="onclick:ShowHideListPanel"title="Show Stops List"/></td>
+							<td><img src="./img/arrow-round.png"id="stopshow" style="height:25px;width:25px;cursor: pointer" dojoAttachEvent="onclick:HideListstop"   title="Hide Stops"></td>
+
+						</tr>
+
+					</table>
+					<table name="StopsList"multiple="multiple"id="gradient-style1"state="minimized" style="overflow: auto;display: none;" >
+
+					</table>
+					<table cellpadding="2" cellspacing="2" >
+						<tr>
+
+							<td style="width: 25px;"><img style="height: 30px;width: 30px;cursor: pointer"  src="./img/taglaststop.png"/></td>
+							<td style="width: 175px"><select data-dojo-type="dijit/form/FilteringSelect" id="laststopC" name="laststopC"  dojoAttachEvent="onChange:selectSCODEC"  style="width: 100%"  fetchProperties="{sort:[{attribute:'name', descending:false}]}">
+
+							</select></td>
+
+							<td><span id="routetextc" style="font-size: 12px;cursor: pointer;font-family: arial,helvetica,sans-serif;color: black"></span></td>
+
+						</tr>
+					</table>
+					<table id="barriertab" cellpadding="2" cellspacing="2" style="display: none" class="linkstyle">
+						<td style="width: 40px"><span style="font-size: 12px;cursor: pointer;font-family: arial,helvetica,sans-serif;color: black"> Click</span></td>
+						<td style="width: 40px"><img src="./img/point.png" class="imageicons" dojoAttachEvent="onclick:addbrr" title="Add Point" /></td>
+						<td style="width: 40px"><img  src="./img/line.png" class="imageicons" dojoAttachEvent="onclick:createToolbar"title="Draw Line" /></td>
+						<td style="width: 40px"><img src="./img/latlong.png" class="imageicons" dojoAttachEvent="onclick:getlatlong"title="Add Lat/Long"/></td>
+
+					</table>
+				</div>
+				<div id="onmapclick" style="display: none">
+					<span style="font-size: 12px;color: grey"> Click on the Add Stops icon and then click on the map to add stops, double click to finish</span>
+					<table cellspacing="2px" cellpadding="2px">
+
+						<tr>
+							<td id="stoplink"   style="width: 100px;font-size: 12px;cursor: pointer;font-family: arial,helvetica,sans-serif;color: #1F45FC" state="minimized">Add Stops </td>
+							<td><img src="./img/w_routeadd.png" style="cursor: pointer" dojoAttachEvent="onclick:addstp"/></td>
+
+						</tr>
+						<tr>
+							<td id="barrierlink" style="width: 100px;font-size: 12px;cursor: pointer;font-family: arial,helvetica,sans-serif;color: #FF4D00" state="minimized">Add Barriers </td>
+							<td style="width: 50px"><img src="./img/point.png" class="imageicons" dojoAttachEvent="onclick:addbrr"title="Add Point"/></td>
+							<td style="width: 50px"><img src="./img/line.png" class="imageicons"  dojoAttachEvent="onclick:createToolbar" title="Draw Line" /></td>
+							<td style="width: 40px"><img src="./img/latlong.png" class="imageicons"  dojoAttachEvent="onclick:getlatlong"title="Add Lat/Long"/></td>
+
+						</tr>
+
+					</table>
+
+				</div>
+				<table>
+					<tr>
+						<td style="width: 40px"></td>
+						<td id="barrierlink1"class="linkstyle" style="width: 100px;font-size: 12px;cursor: pointer;font-family: arial,helvetica,sans-serif;color: #C35817;font-weight: 900"  dojoAttachEvent="onclick:appendbarrier" > Barriers</td>
+						<td id="optionlink" class="linkstyle" style="width: 100px;font-size: 12px;cursor: pointer;font-family: arial,helvetica,sans-serif;color: #4B0082;font-weight: 900"  dojoAttachEvent="onclick:appendoptions" > Options</td>
+
+					</tr>
+
+				</table>
+
+				<table style="width: 100%;" >
+					<tr>
+						<td id="Route" class="esriStopsGetDirections"  dojoAttachEvent="onclick:genroute" >Get Route </td>
+						<td id="Directions" class="esriStopsGetDirections"  dojoAttachEvent="onclick:gendirections"> Get Directions</td>
+
+						<td id="view" class="esriStopsClearDirections"  dojoAttachEvent="onclick:fullview"  >Zoom to full route</td>
+
+					</tr>
+					<tr>
+						<td>
+						<button name="esriStopsclear"  data-dojo-type="dijit/form/Button"  dojoAttachEvent="onClick:clearAll">
+							Clear
+						</button></td>
+
+						<td><img id="loadingImg1" src="./img/loading-32.gif" style="display:none"/></td>
+
+					</tr>
+
+				</table>
+
+			</div>
+		</div>
+		<div id="optionsDiv" style="display:none;margin:10px " state="minimized">
+
+			<table style="width: 300px;text-align: left;font-family: arial,helvetica,sans-serif;font-size: 12px;" class="optionsstyle">
+
+				<tr style="width: 120%;" class="linkpanel">
+					<td ><img src="./img/impedanceT.png" style="height: 20px;width: 20px"/> Impedances</td>
+
+				</tr>
+				<tr >
+					<td >
+					<input type="radio" data-dojo-type="dijit/form/RadioButton" name="impedance" id="radioDistance" data-dojo-attach-point="agri" checked value="Distance" />
+					<label for="radioOne" class="commonlabel"> Distance</label></td>
+				</tr>
+
+				<tr>
+					<td >
+					<input type="radio" data-dojo-type="dijit/form/RadioButton" name="impedance" id="radioTime"data-dojo-attach-point="agri1" value="Time" />
+					<label for="radioTwo" class="commonlabel">Time</label></td>
+				</tr>
+
+			</table>
+
+			<table class="optionsstyle" style="text-align: left;font-family: arial,helvetica,sans-serif;font-size: 12px;">
+				<tr class="linkpanel"  style="width: 100%">
+					<td ><img src="./img/preference.png" style="height: 20px;width: 20px"/>Preferences</td>
+				</tr>
+				<tr>
+
+					<td >
+					<input id="FNationalHighway" data-dojo-type="dijit/form/RadioButton"data-dojo-attach-point="FNationalHighway" />
+					National Highway </td>
+
+				</tr>
+				<tr>
+					<td >
+					<input id="FStateHighway"data-dojo-type="dijit/form/RadioButton"data-dojo-attach-point="FStateHighway"/>
+					State Highway</td>
+				</tr>
+				<tr>
+					<td >
+					<input id="FDistrictroad" data-dojo-type="dijit/form/RadioButton"data-dojo-attach-point="FDistrictroad"/>
+					District Roads</td>
+				</tr>
+				<tr>
+					<td >
+					<input id="FVillageroad" data-dojo-type="dijit/form/RadioButton" data-dojo-attach-point="FVillageroad"/>
+					Village Roads</td>
+				</tr>
+				<tr>
+					<td >
+					<input id="All" data-dojo-type="dijit/form/RadioButton" checked data-dojo-attach-point="All"/>
+					All</td>
+				</tr>
+
+			</table>
+
+			<table cellspacing="2px" cellpadding="2px" class="optionsstyle">
+				<tr class="linkpanel">
+
+					<td style="text-align: left" ><img src="./img/Problem.png" style="height: 20px;width: 20px"/><span id="Travelsales"> SalesPerson Problem </span></td>
+
+				</tr>
+				<tr>
+					<td>
+					<div style="font-size: 12px;cursor: pointer;font-family: arial,helvetica,sans-serif; text-align: left">
+						<input type="checkbox"id="Return1"data-dojo-type="dijit/form/CheckBox" data-dojo-attach-point="Return">
+						Return to Begining
+					</div></td>
+				</tr>
+				<tr>
+					<td>
+					<div style="font-size: 12px;cursor: pointer;font-family: arial,helvetica,sans-serif;text-align: left">
+						<input type="checkbox"id="BestSeq" name="BestSeq" data-dojo-type="dijit/form/CheckBox" data-dojo-attach-point="BestSeq">
+						Find Best Sequence
+					</div></td>
+				</tr>
+
+			</table>
+
+		</div>
+		<div id="dialogColor" title="Enter latitude/Longitude" data-dojo-type="dijit/Dialog">
+			<table>
+				<tr>
+					<td>
+					<form id="myform">
+						<input type="radio" data-dojo-type="dijit/form/RadioButton" id="latlongselectdd" checked value="dd" dojoAttachEvent="onchange:getlocationchange" data-dojo-attach-point="latlongselectdd"/>
+						<label for="latlongselectdd">dd</label>
+
+						<input type="radio" data-dojo-type="dijit/form/RadioButton"  id="latlongselectdms" value="dms" dojoAttachEvent="onchange:getlocationchange" data-dojo-attach-point="latlongselectdms"/>
+						<label for="latlongselectdms">dms</label>
+
+					</form></td>
+
+				</tr>
+
+			</table>
+
+			<table id="tabledd" style="display: block">
+
+				<tr>
+					<td>Latitude</td>
+					<td><img src="./img/latitude_color_icon.png" style="width: 20px;height: 20px"/></td>
+
+					<td>
+					<input id="latitudeText"data-dojo-type="dijit/form/TextBox"data-dojo-attach-point="latitudeText"/>
+					</td>
+				</tr>
+				<tr>
+					<td>Longitude</td>
+					<td><img src="./img/longitude_color_icon.png"  style="width:20px;height: 20px"/></td>
+					<td>
+					<input id="longitudeText"data-dojo-type="dijit/form/TextBox"data-dojo-attach-point="longitudeText" />
+					</td>
+				</tr>
+
+			</table>
+			<table id="tabledms"  style="display: none">
+
+				<tr>
+					<td>Latitude</td>
+					<td><img src="./img/latitude_color_icon.png" style="width: 20px;height: 20px"/></td>
+
+					<td>
+					<input id="dtextlat"   data-dojo-type="dijit/form/TextBox" style="width: 60px" data-dojo-attach-point="dtextlat" />
+					</td>
+					<td>
+					<input id="mtextlat"   data-dojo-type="dijit/form/TextBox" style="width: 60px" data-dojo-attach-point="mtextlat"/>
+					</td>
+					<td>
+					<input id="stextlat"   data-dojo-type="dijit/form/TextBox"  style="width: 60px" data-dojo-attach-point="stextlat"/>
+					</td>
+
+				</tr>
+				<tr>
+					<td>Longitude</td>
+					<td><img src="./img/longitude_color_icon.png"  style="width:20px;height: 20px"/></td>
+					<td>
+					<input id="dtextlong"   data-dojo-type="dijit/form/TextBox"  style="width: 60px" data-dojo-attach-point="dtextlong"/>
+					</td>
+
+					<td>
+					<input id="mtextlong"   data-dojo-type="dijit/form/TextBox"  style="width: 60px" data-dojo-attach-point="mtextlong"/>
+					</td>
+					<td>
+					<input id="stextlong"   data-dojo-type="dijit/form/TextBox" style="width: 60px" data-dojo-attach-point="stextlong"/>
+					</td>
+
+				</tr>
+
+			</table>
+
+			<table>
+				<tr>
+
+					<td>
+					<button id="latlongB" data-dojo-type="dijit/form/Button" dojoAttachEvent="onClick:getlocationif">
+						Add Barrier
+					</button></td>
+
+				</tr>
+
+			</table>
+		</div>
+		<div id="DirectionsDiv" style="display:none;" >
+
+			<div id="summary" ></div>
+
+			<div id="Rgrid"></div>
+
+		</div>
+
+	</div>
+
+</div>

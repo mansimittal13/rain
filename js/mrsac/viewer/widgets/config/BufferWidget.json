@@ -1,0 +1,12 @@
+/*
+//Richa//
+*/
+{
+	buffer: {
+		url: "http://117.240.213.119/gp/rest/services/Utilities/Geometry/GeometryServer",
+		
+		minGeocodeScore: 50,
+		geometry: "http://117.240.213.119/gp/rest/services/Utilities/Geometry/GeometryServer",
+		
+	}
+}

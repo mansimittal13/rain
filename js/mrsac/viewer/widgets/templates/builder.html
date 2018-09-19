@@ -1,0 +1,143 @@
+<div class="widgetContent" dojoAttachPoint="containerNode">
+	<div class="widgetPanel">
+		<div class="formContainer"style="height:390px;width:300px">
+
+			<table>
+				<tr>
+					<td>Layer</td>
+
+					<td><select data-dojo-type="dijit/form/FilteringSelect"data-dojo-attach-point="registry"value=""dojoAttachEvent="onChange:execute"></select></td>
+
+				</tr>
+				<tr>
+					<td>Fields</td>
+
+				</tr>
+			</table>
+			<div style="height:70px;overflow-y:scroll;overflow-x: hidden;background-color: white;margin-left: 10px;width: 290px;  border: 1px solid grey">
+
+				<div id="con"data-dojo-type="dijit/Menu"data-dojo-attach-point="content"style="width:100%;  border: 0px">
+
+				</div>
+
+			</div>
+			<hr />
+			<table>
+				<tr>
+					<td>
+					<table style="width:130px;">
+						<tr>
+							<td>Operators</td>
+
+						</tr>
+
+						<tr>
+
+							<td><button data-dojo-type="dijit/form/Button"type="button"label=" = "dojoAttachEvent="onClick:itemselect2">
+
+							</button><button data-dojo-type="dijit/form/Button"type="button"label= " <> "dojoAttachEvent="onClick:itemselect2">
+
+							</button><button data-dojo-type="dijit/form/Button"type="button"label=" NOT "dojoAttachEvent="onClick:itemselect2">
+
+							</button></td>
+
+						</tr>
+
+						<tr>
+							<td><button data-dojo-type="dijit/form/Button"type="button"label=" > "dojoAttachEvent="onClick:itemselect2">
+
+							</button><button data-dojo-type="dijit/form/Button"type="button"label=" >= "dojoAttachEvent="onClick:itemselect2">
+
+							</button><button data-dojo-type="dijit/form/Button"type="button"label=" AND "dojoAttachEvent="onClick:itemselect2">
+
+							</button></td>
+						</tr>
+						<tr>
+							<td><button data-dojo-type="dijit/form/Button"type="button"label= " < "dojoAttachEvent="onClick:itemselect2">
+
+							</button><button data-dojo-type="dijit/form/Button"type="button"label= " <= "dojoAttachEvent="onClick:itemselect2">
+
+							</button><button data-dojo-type="dijit/form/Button"type="button"label=" OR "dojoAttachEvent="onClick:itemselect2">
+
+							</button></td>
+						</tr>
+						<tr>
+							<td><button data-dojo-type="dijit/form/Button"type="button"label="_"dojoAttachEvent="onClick:itemselect2">
+
+							</button><button data-dojo-type="dijit/form/Button"type="button"label="%"dojoAttachEvent="onClick:itemselect2">
+
+							</button><button data-dojo-type="dijit/form/Button"type="button"label=" IS "dojoAttachEvent="onClick:itemselect2">
+
+							</button></td>
+						</tr>
+
+						<tr>
+							<td><button data-dojo-type="dijit/form/Button"type="button"label=" LIKE "dojoAttachEvent="onClick:itemselect2">
+
+							</button></td>
+
+						</tr>
+
+					</table></td>
+					<td>
+					<table>
+						<tr>
+							<td>Display unique values:</td>
+						</tr>
+						<tr>
+							<td>
+							<div style="height: 115px;width: 160px;top: 155px;right: 5px;background-color:white;overflow-y:scroll;overflow-x: hidden;border: 1px solid grey">
+
+								<div id="dis"data-dojo-type="dijit/Menu"data-dojo-attach-point="display"style="width:100%;border:0px">
+
+								</div>
+
+							</div></td>
+
+						</tr>
+						<tr>
+							<td>
+							<button data-dojo-type="dijit/form/Button"type="button"dojoAttachEvent="onClick:executeQuery">
+								Get unique value
+							</button>
+							<input type="text" name="typeText" style='width:50px;background-color: beige'id="sr" data-dojo-attach-point="typeText"  data-dojo-type="dijit/form/TextBox"data-dojo-props="trim:true, propercase:true"data-dojo-attach-event="KeyUp:executeSearch1"/>
+							</td>
+						</tr>
+
+					</table></td>
+				</tr>
+			</table>
+
+			<table>
+				<tr>
+					<div id="test4">
+
+					</div>
+
+				</tr>
+				<tr>
+					<td>					<textarea data-dojo-type="dijit/form/Textarea"id="content1"style="height:40px;width:265px;background-color:white;font-size:9px;white-space: normal"></textarea></td>
+				</tr>
+				<tr>
+					<td>
+					<button data-dojo-type="dijit/form/Button"type="button"dojoAttachEvent="onClick:clear">
+						Clear
+					</button>
+					<button data-dojo-type="dijit/form/Button"type="button"dojoAttachEvent="onClick:executeQuery1">
+						Execute
+					</button>
+					<button data-dojo-type="dijit/form/Button"type="button"dojoAttachEvent="onClick:verifyQuery">
+						Verify
+					</button>
+					<button data-dojo-type="dijit/form/Button"type="button"dojoAttachEvent="onClick:zoomToQuery">
+						Zoom
+					</button><div id="record">
+
+					</div></td>
+
+				</tr>
+			</table>
+
+		</div>
+	</div>
+</div>

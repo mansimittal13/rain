@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+		<title>MRSAC Portal Rainfall</title>
+		<link rel="shortcut icon" href="./js/mrsac/viewer/assets/images/icons/mrsac_logo_400.png" />
+		<link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.10/js/dojo/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.17/esri/css/esri.css"/>
+		<link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dgrid/css/dgrid.css">
+		<link rel="stylesheet" type="text/css" href="css/lika.css"/>
+		<link rel="stylesheet" type="text/css" href="css/sweet.css"/>
+
+		<script type="text/javascript">
+			var dojoConfig = {
+				async : true,
+				paths : {
+					viewer : location.pathname.replace(/[^\/]+$/, '') + "js/mrsac/viewer"
+				},
+				isDebug : false,
+				cacheBust : true,
+				usePlainJson : true
+			};
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/0.5.0/sweet-alert.min.js"></script>
+		<script src="http://js.arcgis.com/3.17/"></script>
+		<script type="text/javascript">
+			require(["dojo/parser", "dojo/topic", "viewer/WidgetContainer", "viewer/Controller", "viewer/ConfigManager", "viewer/MapManager", "viewer/WidgetManager", "viewer/util", "viewer/NavigationMenu", "viewer/Footer", "viewer/navtools", "dojo/dom-style", "dojo/dom", "dojo/dom-class", "dojo/has", "dojo/_base/sniff", "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox"], function(parser, topic, WidgetContainer, Controller, ConfigManager, MapManager, WidgetManager, util, NavigationMenu, Footer, navtools, domStyle, dom, domClass, has) {
+
+				parser.parse();
+				window.onPageResizeHandler = function() {
+					if (mrsac.viewer.util) {
+						var screen = mrsac.viewer.util.pageBox();
+						topic.publish("mapResizeRequestEvent", screen);
+					}
+				};
+				window.HideSplashScreenMessage = function() {
+					if (has("ie") <= 6) {
+						domStyle.set(dom.byId("divSplashScreenContent"), "style", "none");
+					}
+					domClass.add("divSplashScreenContainer", "opacityHideAnimation");
+					domClass.replace("divSplashScreenContent", "hideContainer", "showContainer");
+				};
+				window.HideAlertBox = function() {
+					domStyle.set(dom.byId("alertDiv"), "display", "none");
+					domStyle.set(dom.byId("divSplashScreenContent"), "display", "block");
+				}; 
+
+			});
+
+		</script>
+
+	</head>
+
+	<body class="claro" onresize="onPageResizeHandler()" onKeydown="if (event.keyCode==13)HideSplashScreenMessage()">
+		<div data-dojo-type="viewer/ConfigManager"></div>
+		<div data-dojo-type="viewer/Controller"></div>
+		<div data-dojo-type="viewer/MapManager"></div>
+		<div data-dojo-type="viewer/WidgetManager"></div>
+		<div data-dojo-type="viewer/navtools"></div>
+		<div id="appLayout" class="demoLayout" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline',gutters: false">
+			<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'">
+
+			</div>
+			<div class="edgePanelafter" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'">
+
+			</div>
+			<div id="map" class="centerPanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center', tabPosition: 'bottom',gutters: false">
+
+				<div data-dojo-type="viewer/WidgetContainer"></div>
+				<div data-dojo-type="viewer/ThemeWidgetContainer"></div>
+				<div data-dojo-type="viewer/NavigationMenu"></div>
+
+			</div>
+			<div class="footer" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom',gutters: false">
+				<div data-dojo-type="viewer/Footer"></div>
+			</div>
+		</div>
+		<div id="divLoadingIndicator" class="divLoadingIndicator" style="display: none;">
+			<table style="width: 100%; height: 100%;">
+				<tr align="center" valign="middle">
+					<td><img style="width:40px;height:40px" src="img/loading-32.gif" /><span style="position: relative;left: -131px; top: 20px;color: white;"> Data Loading </span></td>
+
+				</tr>
+			</table>
+		</div>
+		<div id="divLoadingIndicatornew" class="divLoadingIndicator" style="display: none;">
+			<table style="width: 100%; height: 100%;">
+				<tr align="center" valign="middle">
+					<td><img style="width:40px;height:40px" src="img/loading-32.gif" /><span style="position: relative;left: -131px; top: 20px;color: white;"> Geoprocessing In Progress </span></td>
+
+				</tr>
+			</table>
+		</div>
+
+		
+		<!--Server Maintenence Message-->
+	<!--	 <div id="alertDiv" class="divSplashScreenContainer" style="display: block;z-index: 1500;">
+			<table style="width: 100%; height: 100%;">
+				<tr align="center" valign="middle">
+					<td id="alertBox">
+					<div class=" divSplashScreenContent">
+						<table style="width: 100%;">
+							<tr>
+								<td>
+								<div id="divSplashContainer" class="divSplashContainer" style="margin-top: 10px;">
+									<div id="divSplashContent" class="divSplashContent">
+										<table>
+											<tr>
+												<td><img src="./js/mrsac/viewer/assets/images/icons/mrsac_logo_400.png"style="height: 40px;width: 40px"/></td>
+												<td><img style="vertical-align: bottom;position: relative;display: inline-block;"
+												src="img/new4.gif" height="25" width="50"><b>NETWORK MAINTENANCE NOTIFICATION :</b></td>
+											</tr>
+										</table>
+
+										<hr/>
+										
+										<p>
+											 Due to Electrical and UPS Maintenance this Site will not be available on 10-02-2018. So kindly do not perform any data entry or uploading of photographs from Mobile during this time !, inconvenience regretted. 
+											This site will be unavailable on 28 July 2018 due to network maintenance activity at MRSAC, Sorry for inconvenience.
+										</p>
+									</div>	
+                                 </div>
+                                </td> 
+							</tr>
+							<tr>
+								<td align="center">
+								<div style="width: 75px; margin-top: 10px" class="customButton" onclick="HideAlertBox();" >
+									<div class="customButtonInner">
+										<table style="width: 100%; height: 100%;">
+											<tr>
+												<td align="center" valign="middle"> OK </td>
+											</tr>
+										</table>
+									</div>
+								</div></td>
+							</tr>
+						</table>
+					</div> 
+					</td>
+				</tr>
+     		</table>
+		</div>  -->
+	<!--Server maintenace message ends here-->
+		<!--splash message-->
+
+		<div id="divSplashScreenContainer" class="divSplashScreenContainer" style="display: block;">
+			<table style="width: 100%; height: 100%;">
+				<tr align="center" valign="middle">
+					<td>
+					<div id="divSplashScreenContent" class=" divSplashScreenContent">
+						<table style="width: 100%;">
+							<tr>
+								<td>
+								<div id="divSplashContainer" class="divSplashContainer" style="margin-top: 10px;">
+									<div id="divSplashContent" class="divSplashContent">
+										<table>
+											<tr>
+												<td><img src="./js/mrsac/viewer/assets/images/icons/mrsac_logo_400.png"style="height: 40px;width: 40px"/></td>
+												<td><b>Welcome to MRSAC Geo-Portal</b></td>
+											</tr>
+										</table>
+
+										<hr/>
+										<br/>
+										The <b>Geo-Portal</b> serves you -:
+										<br />
+										<a style="color: #8AFB17">General Search</a>: Search a Region entering District,Tehsil or village.
+										<br />
+										<a style="color: #8AFB17">Get Directions</a>: user can get the route ad the directions from one village to another within Maharashtra.
+										<br />
+										<!--
+										<a style="color: #8AFB17">Add External Layer </a>: where you can add your own layer (an eg is shown in the widget itself)
+										<br />-->
+
+										The Portal is Complemented with <a style="color: #8AFB17">Basemap Gallery,Layer list,Measurement, Buffer ,Bookmarks </a> etc
+
+										<br/>
+
+									</div>
+								</div></td>
+							</tr>
+							<tr>
+								<td align="center">
+								<div style="width: 75px; margin-top: 10px" class="customButton" onclick="HideSplashScreenMessage();" >
+									<div class="customButtonInner">
+										<table style="width: 100%; height: 100%;">
+											<tr>
+												<td align="center" valign="middle"> OK </td>
+											</tr>
+										</table>
+									</div>
+								</div></td>
+							</tr>
+						</table>
+					</div></td>
+				</tr>
+
+			</table>
+
+		</div>
+
+		<!--splash ends here-->
+	</body>
+</html>
